@@ -29,5 +29,9 @@ public class AlienDictionary {
 		}
 		return null;
 	}
+	
+	public int getSize() {
+		return dizionario.size();
+	}
 
 }
