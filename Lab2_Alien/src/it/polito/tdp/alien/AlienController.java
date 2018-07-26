@@ -9,6 +9,7 @@ package it.polito.tdp.alien;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import it.polito.tdp.model.AlienDictionary;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,6 +17,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class AlienController {
+	
+	private AlienDictionary model;
 	
     @FXML
     private ResourceBundle resources;
@@ -50,6 +53,10 @@ public class AlienController {
     @FXML
     void doReset(ActionEvent event) {
 
+    }
+    
+    public void setModel(AlienDictionary model) {
+    	this.model = model;
     }
     
 }
