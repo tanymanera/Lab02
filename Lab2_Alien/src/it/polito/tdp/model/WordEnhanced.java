@@ -1,30 +1,26 @@
 package it.polito.tdp.model;
 
-public class Word {
+import java.util.ArrayList;
+import java.util.List;
+
+public class WordEnhanced {
 
 	private String alienWord;
-	private String translation;
+	private List<String> translations;
 	
-	public Word(String alienWord, String translation) {
+	public WordEnhanced(String alienWord, String translation) {
 		super();
+		translations = new ArrayList<String>();
 		this.alienWord = alienWord;
-		this.translation = translation;
+		this.translations.add(translation);
 	}
 
 	public String getAlienWord() {
 		return alienWord;
 	}
 
-	public void setAlienWord(String alienWord) {
-		this.alienWord = alienWord;
-	}
-
-	public String getTranslation() {
-		return translation;
-	}
-
-	public void setTranslation(String translation) {
-		this.translation = translation;
+	public List<String> getTranslations() {
+		return translations;
 	}
 
 	@Override
@@ -43,10 +39,10 @@ public class Word {
 		if (obj == null) {
 			return false;
 		}
-		if (!(obj instanceof Word)) {
+		if (!(obj instanceof WordEnhanced)) {
 			return false;
 		}
-		Word other = (Word) obj;
+		WordEnhanced other = (WordEnhanced) obj;
 		if (alienWord == null) {
 			if (other.alienWord != null) {
 				return false;
@@ -59,7 +55,14 @@ public class Word {
 
 	@Override
 	public String toString() {
-		return "Word [alienWord=" + alienWord + ", translation=" + translation + "]";
+		return "WordEnhanced [alienWord=" + alienWord + ", translations=" + translations + "]";
+	}
+
+	public boolean compareWild(String alienWild) {
+		if( alienWord.matches(alienWild)){
+			return true;
+		}
+		return false;
 	}
 	
 	
